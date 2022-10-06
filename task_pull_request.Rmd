@@ -1,0 +1,36 @@
+---
+title: "task12"
+author: "Shahana AYOBI"
+date: '2022-10-06'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+sum(1:100)
+```
+
+```{r}
+library(ggplot2)
+
+p <- ggplot(data=iris,mapping=aes(x=Petal.Length,y=Petal.Width))+
+  geom_point(aes(color=Sepal.Width))+
+  geom_smooth(method="lm")+
+  scale_color_viridis_c()+
+  scale_x_continuous(breaks=1:8)+
+  labs(title="This Is A Title",subtitle="This is a subtitle",x=" Petal Length", 
+       y="Petal Width", caption="This is a little caption.")+
+  facet_wrap(~Species)+
+  theme_bw()+
+  theme(
+    axis.title=element_text(color="cyan4",face="bold", size = 11),
+    plot.title=element_text(color="cyan4",face="bold", size = 18),
+    plot.subtitle=element_text(color="cyan4", face = "italic", size = 14),
+    panel.grid=element_blank(),
+    legend.position = "none"
+  )
+```
+
