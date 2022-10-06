@@ -1,0 +1,220 @@
+---
+title: "week-3-tasks"
+author: "Naida Dzigal"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+geometry: margin = 2cm
+fontsize: 9pt
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+
+# Git branch and pull request
+
+Very good mini course \href{https://www.youtube.com/watch?v=RGOj5yH7evk}{here}
+
+# Pull request task
+
+-   fork my repo pull_request_demo
+-   clone the forked repository
+-   create a rmd file inside HA map with your name, calculate the sum of the -   first 100 integer and create a ggplot.
+-   knit into HTML
+-   commit and push the 2 files to your forked repo
+-   create a pull request to my repo
+
+# Reproduce the followings
+
+```{r, echo = FALSE}
+letters1 <- c("a", "b", "c", "d", "e")
+print(letters1)
+```
+
+```{r, echo = FALSE}
+letters2 <- c("a", "c", "e", "g", "i", "k", "m", "o", "q", "s", "u", "w", "y")
+print(letters2)
+```
+
+```{r, echo = FALSE}
+a <- c(1:10)
+print(paste0("Count ", a))
+```
+
+```{r, echo = FALSE}
+print(paste0(letters2, collapse = "#"))
+```
+
+```{r, echo = FALSE}
+print(paste0(letters2, collapse = " $ "))
+```
+
+# Print out the value of
+
+-   pi
+-   round pi to two digits
+-   square root of pi
+-   pi power of 5
+
+```{r, echo = FALSE}
+pi
+```
+
+```{r, echo = FALSE}
+print(signif(pi, digits = 3))
+```
+
+```{r, echo = FALSE}
+sqrt(pi)
+```
+
+```{r, echo = FALSE}
+pi^5
+```
+
+# Sequences
+
+```{r, echo = FALSE}
+seq(0, 1, 0.02)  
+```
+
+```{r, echo = FALSE}
+seq(1, 2, 1/12)  
+```
+
+-   generate a random number between 0 and 1
+-   generate 10 random numbers between 0 and 1
+-   generate 10 random numbers between 0 and 100
+-   generate 20 integer random numbers between 0 and 10 (it should contain 0 and 10 as well and use runif)
+-   generate 20 integer random number between 0 and 10 (use sample)
+
+```{r, echo = FALSE}
+runif(1)
+```
+
+
+```{r, echo = FALSE}
+runif(10, min=0, max=1)
+```
+
+```{r, echo = FALSE}
+runif(10, min=0, max=100)
+```
+
+```{r, echo = FALSE}
+runif(20, min=0, max=100)
+```
+
+```{r, echo = FALSE}
+sample(c(0:10), 20, replace = TRUE)
+```
+
+# Vectors
+
+```{r, echo = FALSE}
+animals <- c('dog', 'cat', 'mouse', 'uniconr', 'bear', 'snake', 'whale', 'bull' )
+```
+
+-   check if ‘bear’ is in the animals vector
+-   check if ‘cat’ and ‘snake’ are in the animal vector
+-   sum how many of the followings ‘mouse’, ‘wolf’, ‘shark’, ‘bull’ are in the animals vector
+-   how many of the animals start with the letter b
+
+```{r, echo = FALSE}
+'bear' %in% animals
+```
+
+```{r, echo = FALSE}
+vals1 <- c('cat', 'snake')
+vals1 %in% animals
+```
+
+```{r, echo = FALSE}
+vals2 <- c('mouse', 'wolf', 'shark', 'bull')
+sum(vals2 %in% animals)
+```
+
+```{r, echo = FALSE}
+sum(startsWith(animals, 'b'))
+```
+
+# Lists
+
+```{r}
+l <- list('hello', 10, letters)
+```
+
+-   print out the second element of the vector
+-   print out the length of the vector inside the list
+-   check if the number in the list is divisible by 5
+
+```{r, echo = FALSE}
+letters[2]
+```
+
+
+```{r, echo = FALSE}
+length(letters)
+```
+
+```{r, echo = FALSE}
+sapply(l[2], `%%`, 5) == 0
+```
+
+Plot sinus curve from 0, to 2pi 
+
+```{r, echo = FALSE}
+x <- seq(0, 2*pi, length.out = 200)
+plot(x, sin(x), type="l", col = "red")
+```
+
+# Data type/structures
+
+List as many data type structure as you can!
+
+For example:
+
+```{r}
+#numeric
+i <- 3
+str(i)
+```
+
+
+```{r}
+typeof(i)
+```
+
+```{r}
+# string
+s <- 'Hello CEU'
+str(s)
+```
+
+```{r}
+typeof(s)
+```
+
+
+```{r, eval = FALSE}
+#
+```
+
+# Prettydoc
+
+Install the prettydoc package
+
+```{r, eval = FALSE}
+install.packages("prettydoc")
+```
+
+Add to the header the following
+
+```{r, eval = FALSE}
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+```
+
+
+Check the prettydoc themes at [https://prettydoc.statr.me/](https://prettydoc.statr.me/)
